@@ -181,6 +181,7 @@ export default defineComponent({
 
       for (let i = 0; i < path.length; i += 1) {
         if (!path[i + 1]) break;
+
         this.drawEdge(nodes[path[i]].node, nodes[path[i + 1]].node);
       }
     },

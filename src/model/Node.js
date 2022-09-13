@@ -1,5 +1,7 @@
 export default class Node {
-  constructor(id, coordinates = { x: 0, y: 0 }, properties = {}, items = []) {
+  constructor({
+    id, coordinates = { x: 0, y: 0 }, properties = {}, items = [],
+  }) {
     this.id = id;
     this.coordinates = coordinates;
     this.properties = properties;

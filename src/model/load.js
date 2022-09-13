@@ -12,8 +12,10 @@ export const loadMapData = (fastTravel = true) => {
   const edges = [];
   const nodes = {};
 
+  const savedNodes = JSON.parse(localStorage.getItem('nodes') || '{}');
+
   mapData.points_of_interest.forEach((poi) => {
-    const node = new Node(poi.id, poi.coordinates, poi.properties);
+    const node = new Node({ ...poi, ...(savedNodes[poi.id] || {}) });
 
     graph.addNode(node);
 
@@ -23,7 +25,7 @@ export const loadMapData = (fastTravel = true) => {
   });
 
   mapData.roads.forEach((road) => {
-    const node = new Node(road.id, road.coordinates, road.properties);
+    const node = new Node({ ...road, ...(savedNodes[road.id] || {}) });
 
     graph.addNode(node);
 

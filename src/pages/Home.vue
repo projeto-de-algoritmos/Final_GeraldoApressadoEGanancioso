@@ -21,7 +21,7 @@
         @click="handleNodeClick(poi)"
         @click.right="(event) => handleRightClick(event, poi)"
       >
-        <q-tooltip style="font-size: 12px" v-if="getNodeTooltipMsg(poi.id)">
+        <q-tooltip style="font-size: 12px; white-space: pre-line" v-if="getNodeTooltipMsg(poi.id)">
           {{getNodeTooltipMsg(poi.id)}}
         </q-tooltip>
       </div>
@@ -33,7 +33,7 @@
         :style="nodeCss(road)"
         @click="handleNodeClick(road)"
       >
-        <q-tooltip style="font-size: 12px" v-if="getNodeTooltipMsg(road.id)">
+        <q-tooltip style="font-size: 12px; white-space: pre-line" v-if="getNodeTooltipMsg(road.id)">
           {{getNodeTooltipMsg(road.id)}}
         </q-tooltip>
       </div>
@@ -107,9 +107,6 @@ export default defineComponent({
 
     this.drawBackgroundImage();
   },
-  updated() {
-    console.log('Nodes: ', this.nodes);
-  },
   beforeUnmount() {
     this.$refs.canvas.removeEventListener('mousedown', this.handleCanvasClick);
   },
@@ -182,11 +179,7 @@ export default defineComponent({
       this.edges = edges;
       this.points_of_interested = pois;
 
-      console.log('before set nodes: ', nodes);
-
       this.setNodes({ ...nodes });
-
-      console.log(this.nodes.nilfgaardian_garrison);
     },
     drawBackgroundImage(callback = () => true) {
       const { context } = this.getCanvasAndContext();
@@ -342,7 +335,7 @@ export default defineComponent({
 
       if (this.startNode === nodeId) return 'Clique mais uma vez para executar o algoritmo de Prim a partir deste nó';
 
-      if (!this.startNode && !this.destNode) return 'Clique para selecionar este nó como início';
+      if (!this.startNode && !this.destNode) return 'Clique com o esquerdo para selecionar este nó como início\n\nClique com direito para gerenciar os itens';
 
       if (this.startNode && !this.destNode && this.startNode !== nodeId) {
         return 'Clique para selecionar este nó como destino';

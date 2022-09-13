@@ -13,6 +13,7 @@
             v-model="name"
             label="Nome *"
             :error="!name && !!fieldsErrors.name"
+            :disable="edit"
           >
             <template v-slot:error>{{ fieldsErrors.name }}</template>
           </q-input>

@@ -5,6 +5,26 @@ import { Notify } from 'quasar';
 
 // import example from './module-example'
 
+const saveNodesToLocalStorage = (nodes) => {
+  localStorage.setItem('nodes', JSON.stringify(nodes));
+};
+
+const getLocalStorageNodes = () => {
+  const strNodes = localStorage.getItem('nodes');
+
+  if (strNodes) {
+    try {
+      const nodes = JSON.parse(strNodes);
+
+      if (nodes instanceof Array) return nodes;
+    } catch {
+      return {};
+    }
+  }
+
+  return {};
+};
+
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation;
@@ -22,7 +42,7 @@ const Store = createStore({
     sleepTime: 50,
     disableFields: false,
     weightSum: 0,
-    nodes: {},
+    nodes: getLocalStorageNodes(),
   },
   getters: {
     nodes(state) {
@@ -48,8 +68,12 @@ const Store = createStore({
     },
   },
   mutations: {
-    setNodes(state, value) {
-      state.nodes = value;
+    setNodes(state, nodes) {
+      const newNodes = { ...nodes };
+
+      saveNodesToLocalStorage(newNodes);
+
+      state.nodes = newNodes;
     },
     setIsBfs(state, value) {
       state.isBfs = value;

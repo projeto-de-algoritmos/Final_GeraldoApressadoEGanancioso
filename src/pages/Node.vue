@@ -2,7 +2,11 @@
   <q-page>
     <FormModal ref="formModal" />
 
-    <div class="page-container flex column q-mt-xl q-mx-auto">
+    <div class="page-container flex column q-mt-md q-mx-auto">
+      <h4 class="text-h4 q-mb-lg">
+        {{ getPageTitle() }}
+      </h4>
+
       <q-table
         title="Itens"
         :rows="node.items"
@@ -180,6 +184,12 @@ export default {
       editItem: 'editItem',
       removeItem: 'removeItem',
     }),
+    capitalizeString(str) {
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    },
+    getPageTitle() {
+      return this.$route.params.nodeId.split('_').map((item) => this.capitalizeString(item)).join(' ');
+    },
     saveMapData() {
       return new Promise((resolve) => {
         const { nodes } = loadMapData(false);

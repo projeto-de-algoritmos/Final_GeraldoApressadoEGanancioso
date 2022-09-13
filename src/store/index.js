@@ -36,35 +36,19 @@ const getLocalStorageNodes = () => {
 
 const Store = createStore({
   state: {
-    isBfs: false,
     fastTravel: false,
-    showAllEdges: false,
-    sleepTime: 50,
     disableFields: false,
-    weightSum: 0,
     nodes: getLocalStorageNodes(),
   },
   getters: {
     nodes(state) {
       return state.nodes;
     },
-    isBfs(state) {
-      return state.isBfs;
-    },
     fastTravel(state) {
       return state.fastTravel;
     },
-    showAllEdges(state) {
-      return state.showAllEdges;
-    },
-    sleepTime(state) {
-      return state.sleepTime;
-    },
     disableFields(state) {
       return state.disableFields;
-    },
-    weightSum(state) {
-      return state.weightSum;
     },
   },
   mutations: {
@@ -75,46 +59,22 @@ const Store = createStore({
 
       state.nodes = newNodes;
     },
-    setIsBfs(state, value) {
-      state.isBfs = value;
-    },
     setFastTravel(state, value) {
       state.fastTravel = value;
     },
-    setShowAllEdges(state, value) {
-      state.showAllEdges = value;
-    },
-    setSleepTime(state, value) {
-      state.sleepTime = value;
-    },
     setDisableFields(state, value) {
       state.disableFields = value;
-    },
-    setWeightSum(state, value) {
-      state.weightSum = value;
     },
   },
   actions: {
     setNodes({ commit }, value) {
       commit('setNodes', value);
     },
-    setIsBfs({ commit }, value) {
-      commit('setIsBfs', value);
-    },
     setFastTravel({ commit }, value) {
       commit('setFastTravel', value);
     },
-    setShowAllEdges({ commit }, value) {
-      commit('setShowAllEdges', value);
-    },
-    setSleepTime({ commit }, value) {
-      commit('setSleepTime', value);
-    },
     setDisableFields({ commit }, value) {
       commit('setDisableFields', value);
-    },
-    setWeightSum({ commit }, value) {
-      commit('setWeightSum', value);
     },
     addItem({ dispatch, rootState }, { item, nodeId }) {
       try {
@@ -140,6 +100,8 @@ const Store = createStore({
           throw Error('Nó não encontrado');
         }
       } catch (error) {
+        console.error(error);
+
         Notify.create({
           message: error.message || 'Falha ao cadastrar o item',
           type: 'negative',
@@ -208,7 +170,9 @@ const Store = createStore({
           type: 'positive',
           position: 'top-right',
         });
-      } catch {
+      } catch (error) {
+        console.error(error);
+
         Notify.create({
           message: 'Falha ao editar o item',
           type: 'negative',

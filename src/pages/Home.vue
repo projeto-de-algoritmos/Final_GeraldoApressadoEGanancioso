@@ -124,46 +124,27 @@ export default defineComponent({
     };
   },
   watch: {
-    showAllEdges(newValue) {
-      this.clearDrawnPath(newValue ? this.drawAllEdges : undefined);
-    },
     fastTravel(newValue) {
       this.saveMapData(newValue);
 
-      if (this.startNode && this.startNode === this.destNode) {
-        this.redraw(this.drawPrim);
-      } else {
-        this.redraw(() => this.drawPath(this.search()));
-      }
-    },
-    isBfs(newValue) {
-      this.redraw(() => this.drawPath(this.search(newValue)));
+      this.redraw(() => this.drawPath(this.search()));
     },
   },
   computed: mapGetters({
     nodes: 'nodes',
-    isBfs: 'isBfs',
     fastTravel: 'fastTravel',
-    showAllEdges: 'showAllEdges',
-    sleepTime: 'sleepTime',
     disableFields: 'disableFields',
-    weightSum: 'weightSum',
   }),
   methods: {
     ...mapActions({
       setDisableFields: 'setDisableFields',
-      setWeightSum: 'setWeightSum',
       setNodes: 'setNodes',
     }),
-    search(isBfs = this.isBfs) {
-      if (isBfs) return this.graph.bfsFromStartToDest(this.startNode, this.destNode);
-
+    search() {
       return this.graph.dijkstra(this.startNode, this.destNode);
     },
     redraw(callback) {
       if (this.hasDrawing) {
-        this.setWeightSum(0);
-
         this.clearCanvas();
 
         this.drawBackgroundImage(callback);
@@ -296,7 +277,7 @@ export default defineComponent({
       this.drawBackgroundImage(drawImgCallback);
     },
     handleNodeClick(node) {
-      if (this.disableFields || this.showAllEdges) return;
+      if (this.disableFields) return;
 
       if (this.startNode && this.destNode) {
         this.clearDrawnPath();
@@ -305,11 +286,7 @@ export default defineComponent({
       } else if (this.startNode && !this.destNode) {
         this.destNode = node.id;
 
-        if (this.startNode === this.destNode) {
-          this.drawPrim();
-        } else {
-          this.drawPath(this.search());
-        }
+        this.drawPath(this.search());
       }
     },
     handleRightClick(event, node) {
@@ -321,7 +298,6 @@ export default defineComponent({
     handleCanvasClick() {
       if (!this.disableFields && (this.startNode || this.destNode)) {
         this.clearDrawnPath();
-        this.setWeightSum(0);
       }
     },
     getCanvasAndContext() {
@@ -331,9 +307,7 @@ export default defineComponent({
       return { canvas, context };
     },
     getNodeTooltipMsg(nodeId) {
-      if (this.disableFields || this.showAllEdges) return '';
-
-      if (this.startNode === nodeId) return 'Clique mais uma vez para executar o algoritmo de Prim a partir deste nó';
+      if (this.disableFields) return '';
 
       if (!this.startNode && !this.destNode) return 'Clique com o esquerdo para selecionar este nó como início\n\nClique com direito para gerenciar os itens';
 
@@ -342,33 +316,6 @@ export default defineComponent({
       }
 
       return '';
-    },
-    drawPrim() {
-      const edges = this.graph.prim_algorithm(this.startNode);
-
-      this.hasDrawing = true;
-      this.setDisableFields(true);
-
-      (async () => {
-        // eslint-disable-next-line no-promise-executor-return
-        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-        this.setWeightSum(0);
-        let weight = 0;
-        for (let i = 0; i < edges.length; i += 1) {
-          const edge = edges[i];
-          weight = this.weightSum + edge.cost;
-          this.setWeightSum(Math.round(weight * 100) / 100);
-          this.drawEdge(
-            this.graph.getNode(edge.from).node,
-            this.graph.getNode(edge.to).node,
-            null,
-            true,
-          );
-          // eslint-disable-next-line no-await-in-loop
-          await sleep(this.sleepTime);
-        }
-      })()
-        .then(() => { this.setDisableFields(false); });
     },
   },
 });

@@ -1,0 +1,194 @@
+[
+    {
+        "name":"Cintrian Faro",
+        "value":"5",
+        "weight":"0.1",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/2/2b/Alcohol_Cintrian_Faro.png",
+        "id":"476ec1d0-ab1f-47fa-963a-6df1600bec55"
+    },
+    {
+        "name":"Kaedwenian Stout\t",
+        "value":"5",
+        "weight":"0.1",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/4/42/Alcohol_Kaedwenian_Stout.png",
+        "id":"ff60beb3-d12d-43ac-82b0-e40f69584759"
+    },
+    {
+        "name":" Redanian Lager",
+        "value":"5",
+        "weight":"0.1",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/8/8a/Alcohol_Redanian_Lager.png",
+        "id":"d36af1cd-82bf-4696-a667-22199d978e48"
+    },
+    {
+        "name":"Rivian Kriek",
+        "value":"5",
+        "weight":"0.1",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/9/96/Alcohol_Rivian_Kriek.png",
+        "id":"c37c2b69-a08c-4093-a461-97934094de15"
+    },
+    {
+        "name":"Viziman Champion",
+        "value":"5",
+        "weight":"0.1",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/8/8e/Alcohol_Viziman_Champion.png",
+        "id":"4cc2db69-6e09-4ec4-8998-22358e161dd4"
+    },
+    {
+        "name":"Torch",
+        "value":"5",
+        "weight":"0.11",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/6/68/Tw3_torch.png",
+        "id":"ca65b0b1-3e66-4546-9855-f1292cf9d9bb"
+    },
+    {
+        "name":"Stone hammer",
+        "value":"80",
+        "weight":"8",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/a/a1/Weapons_Stone_hammer.png",
+        "id":"17d17283-b970-4a7b-9def-80fd2f3a22e1"
+    },
+    {
+        "name":"Axe",
+        "value":"96",
+        "weight":"5",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/2/22/Tw2_weapon_axe.png",
+        "id":"c9917670-29b5-4b95-a35c-54620e9fe476"
+    },
+    {
+        "name":"Silver ruby ring",
+        "value":"80",
+        "weight":"0.2",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/5/59/Rings_Silver_ruby.png",
+        "id":"33e56220-e5da-440c-8284-de946824f602"
+    },
+    {
+        "name":"Silver amber ring",
+        "value":"60",
+        "weight":"0.15",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/d/de/Rings_Silver_amber.png",
+        "id":"07fc2f68-f2d9-4939-a68f-1370ec80ef6c"
+    },
+    {
+        "name":"Silver ring",
+        "value":"40",
+        "weight":"0.2",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/d/d1/Rings_Silver.png",
+        "id":"ffa9f0dd-e516-4738-9855-ee608e44581a"
+    },
+    {
+        "name":"Alchemical paste",
+        "value":"14",
+        "weight":"0.6",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/9/92/Base_Alchemical_Paste.png",
+        "id":"b547ba3b-cb7f-48aa-a5c3-8f5e8cae572a"
+    },
+    {
+        "name":"Bread",
+        "value":"1",
+        "weight":"0.01",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/b/b7/Food_Bread.png",
+        "id":"ae019bc6-f383-4754-9380-ded4867d11a4"
+    },
+    {
+        "name":"Very Old Wine",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/6/6b/Alcohol_Toussaint_Red.png",
+        "value":400,
+        "weight":0.85,
+        "id":"a8d86cb6-0aa7-4562-8787-6e165893ecf2"
+    },
+    {
+        "name":"The History of the World",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/3/33/Books_Generic_other.png",
+        "value":8,
+        "weight":0.55,
+        "id":"6c57b6d6-a93d-4a22-a491-b039e5c5168f"
+    },
+    {
+        "name":"Temerian iron dagger",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/e/ec/Weapons_Temerian_iron_dagger.png",
+        "value":10,
+        "weight":0.45,
+        "id":"2c88a0c4-f40e-47a6-b97b-b1b433147003"
+    },
+    {
+        "name":"Temerian steel dagger",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/a/ab/Weapons_Temerian_steel_dagger.png",
+        "value":20,
+        "weight":0.65,
+        "id":"3b84c3db-d995-4916-826a-9e7caab982a5"
+    },
+    {
+        "name":"Basics of Alchemy",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/3/33/Books_Generic_other.png",
+        "value":14,
+        "weight":0.45,
+        "id":"7dcdde95-79fe-4e7f-b98d-0aeee33d28a7"
+    },
+    {
+        "name":" Alcohest",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/d/d4/Alcohol_Alcohest.png",
+        "value":10,
+        "weight":0.18,
+        "id":"6e49d556-1adb-457b-bdfa-2036e205b670"
+    },
+    {
+        "name":"Flint",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/5/54/Items_Flint.png",
+        "value":1,
+        "weight":0.05,
+        "id":"9a1cdd4d-2f7c-46b4-89ba-b93309ee383d"
+    },
+    {
+        "name":"Dwarven axe from Carbon",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/0/04/Weapons_Dwarven_axe.png",
+        "value":20,
+        "weight":1.35,
+        "id":"3b8d8850-096b-4885-900e-fcf589cf0d5e"
+    },
+    {
+        "name":"Temerian steel axe",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/e/e2/Weapons_Temerian_steel_axe.png",
+        "value":60,
+        "weight":1.6,
+        "id":"930d2aa4-4b80-4a4e-a384-85dbbed91bf9"
+    },
+    {
+        "name":"Mahakaman battle hammer",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/8/81/Weapons_Mahakaman_battle_hammer.png",
+        "value":80,
+        "weight":2.05,
+        "id":"761915c4-161e-4d28-a198-b71c29ffb9b3"
+    },
+    {
+        "name":"Mahakaman rune dagger",
+        "quantity":1,
+        "imageUrl":"https://static.wikia.nocookie.net/witcher/images/b/b5/Weapons_Mahakaman_rune_dagger.png",
+        "value":55,
+        "weight":0.6,
+        "id":"42eee306-95bf-4e6e-b55e-f2493df2023d"
+    }
+]

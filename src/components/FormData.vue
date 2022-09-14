@@ -10,6 +10,22 @@
           </q-tooltip>
         </q-checkbox>
       </div>
+
+      <div class="q-my-lg">
+        <div class="text-subtitle2 q-mb-sm">Configuração mochila</div>
+
+        <q-input
+          v-model="knapsackCapacity"
+          class="col-6"
+          type="number"
+          label="Capacidade da mochila"
+          :disable="disableFields"
+        >
+          <q-tooltip style="font-size: 12px">
+            Capacidade do inventário
+          </q-tooltip>
+        </q-input>
+      </div>
     </div>
   </div>
 </template>
@@ -30,11 +46,15 @@ export default defineComponent({
   data() {
     return {
       fastTravel: false,
+      knapsackCapacity: 170,
     };
   },
   watch: {
     fastTravel(newValue, _) {
       this.setFastTravel(newValue);
+    },
+    knapsackCapacity(newValue, _) {
+      this.setKnapsackCapacity(newValue);
     },
   },
   computed: mapGetters({
@@ -43,6 +63,7 @@ export default defineComponent({
   methods: {
     ...mapActions({
       setFastTravel: 'setFastTravel',
+      setKnapsackCapacity: 'setKnapsackCapacity',
     }),
   },
 });

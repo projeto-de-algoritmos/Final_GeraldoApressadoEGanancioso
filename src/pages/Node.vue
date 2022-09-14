@@ -149,7 +149,7 @@ export default {
           align: 'left',
           required: true,
           field: 'weight',
-          format: (val) => `${val} g`,
+          format: (val) => (val > 1000 ? `${val / 1000}kg` : `${val}g`),
         },
         {
           name: 'imageUrl',

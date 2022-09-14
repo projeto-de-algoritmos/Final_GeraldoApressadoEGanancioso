@@ -11,6 +11,7 @@ export const loadMapData = (fastTravel = true) => {
   const pois = [];
   const edges = [];
   const nodes = {};
+  const randomItems = [...mapData.randomItems];
 
   const savedNodes = JSON.parse(localStorage.getItem('nodes') || '{}');
 
@@ -57,6 +58,6 @@ export const loadMapData = (fastTravel = true) => {
   }
 
   return {
-    graph, roads, pois, edges, nodes,
+    graph, roads, pois, edges, nodes, randomItems,
   };
 };

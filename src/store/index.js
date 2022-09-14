@@ -38,6 +38,7 @@ const Store = createStore({
   state: {
     fastTravel: false,
     disableFields: false,
+    knapsackCapacity: 50,
     nodes: getLocalStorageNodes(),
   },
   getters: {
@@ -49,6 +50,9 @@ const Store = createStore({
     },
     disableFields(state) {
       return state.disableFields;
+    },
+    knapsackCapacity(state) {
+      return state.knapsackCapacity;
     },
   },
   mutations: {
@@ -65,6 +69,9 @@ const Store = createStore({
     setDisableFields(state, value) {
       state.disableFields = value;
     },
+    setKnapsackCapacity(state, value) {
+      state.knapsackCapacity = value;
+    },
   },
   actions: {
     setNodes({ commit }, value) {
@@ -75,6 +82,9 @@ const Store = createStore({
     },
     setDisableFields({ commit }, value) {
       commit('setDisableFields', value);
+    },
+    setKnapsackCapacity({ commit }, value) {
+      commit('setKnapsackCapacity', value);
     },
     addItem({ dispatch, rootState }, { item, nodeId }) {
       try {

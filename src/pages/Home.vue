@@ -1,5 +1,7 @@
 <template>
   <q-page class="flex flex-center">
+    <KnapsackModal ref="knapsackModal" :items="knapsackItems" />
+
     <div class="container q-mt-sm">
       <canvas class="canvas" ref="canvas">
         <q-tooltip
@@ -82,6 +84,8 @@
 import { mapGetters, mapActions } from 'vuex';
 import { defineComponent } from 'vue';
 import { loadMapData } from '../model/load';
+import { knapsack } from '../model/knapsack';
+import KnapsackModal from '../components/KnapsackModal';
 import canvasBackground from '../assets/images/white_orchard_clean_map.png';
 
 const POI_COLOR = '#8B969C';
@@ -94,6 +98,9 @@ const SIGNPOST_LINE_COLOR = 'rgba(0, 255, 106, 0.8)';
 
 export default defineComponent({
   name: 'HomePage',
+  components: {
+    KnapsackModal,
+  },
   created() {
     this.saveMapData(this.fastTravel);
   },
@@ -121,6 +128,8 @@ export default defineComponent({
       canvasWidth: 1280,
       canvasHeight: 1024,
       nodeCorrection: 5,
+      randomItems: [],
+      knapsackItems: [],
     };
   },
   watch: {
@@ -134,6 +143,7 @@ export default defineComponent({
     nodes: 'nodes',
     fastTravel: 'fastTravel',
     disableFields: 'disableFields',
+    knapsackCapacity: 'knapsackCapacity',
   }),
   methods: {
     ...mapActions({
@@ -149,16 +159,19 @@ export default defineComponent({
 
         this.drawBackgroundImage(callback);
       }
+
+      this.knapsackItems = [];
     },
     saveMapData(fastTravel) {
       const {
-        graph, roads, pois, edges, nodes,
+        graph, roads, pois, edges, nodes, randomItems,
       } = loadMapData(fastTravel);
 
       this.graph = graph;
       this.roads = roads;
       this.edges = edges;
       this.points_of_interested = pois;
+      this.randomItems = randomItems;
 
       this.setNodes({ ...nodes });
     },
@@ -182,8 +195,23 @@ export default defineComponent({
       for (let i = 0; i < path.length; i += 1) {
         if (!path[i + 1]) break;
 
-        this.drawEdge(nodes[path[i]].node, nodes[path[i + 1]].node);
+        const currentNode = nodes[path[i]].node;
+        let tempBag = [];
+
+        if (currentNode.getProperties().road && currentNode.items.length === 0) {
+          const item = this.randomItems[Math.floor(Math.random() * this.randomItems.length)];
+
+          tempBag = [...this.knapsackItems, item];
+        } else {
+          tempBag = [...this.knapsackItems, ...currentNode.items];
+        }
+
+        this.knapsackItems = knapsack(tempBag, this.knapsackCapacity);
+
+        this.drawEdge(currentNode, nodes[path[i + 1]].node);
       }
+
+      this.$refs.knapsackModal.open();
     },
     drawCanvasText(context, coordinates, text) {
       if (text) {
@@ -273,6 +301,9 @@ export default defineComponent({
     clearDrawnPath(drawImgCallback) {
       this.clearPathNodes();
       this.hasDrawing = false;
+
+      this.knapsackItems = [];
+      this.$refs.knapsackModal.close();
 
       this.clearCanvas();
       this.drawBackgroundImage(drawImgCallback);

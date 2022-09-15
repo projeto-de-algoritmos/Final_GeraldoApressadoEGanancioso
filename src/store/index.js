@@ -10,13 +10,11 @@ const saveNodesToLocalStorage = (nodes) => {
 };
 
 const getLocalStorageNodes = () => {
-  const strNodes = localStorage.getItem('nodes');
+  const strNodes = localStorage.getItem('nodes') || '{}';
 
   if (strNodes) {
     try {
-      const nodes = JSON.parse(strNodes);
-
-      if (nodes instanceof Array) return nodes;
+      return JSON.parse(strNodes);
     } catch {
       return {};
     }

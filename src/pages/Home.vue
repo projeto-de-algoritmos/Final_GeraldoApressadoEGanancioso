@@ -23,8 +23,8 @@
         @click="handleNodeClick(poi)"
         @click.right="(event) => handleRightClick(event, poi)"
       >
-        <q-tooltip style="font-size: 12px; white-space: pre-line" v-if="getNodeTooltipMsg(poi.id)">
-          {{getNodeTooltipMsg(poi.id)}}
+        <q-tooltip style="font-size: 12px; white-space: pre-line" v-if="getNodeTooltipMsg(poi)">
+          {{getNodeTooltipMsg(poi)}}
         </q-tooltip>
       </div>
 
@@ -35,8 +35,8 @@
         :style="nodeCss(road)"
         @click="handleNodeClick(road)"
       >
-        <q-tooltip style="font-size: 12px; white-space: pre-line" v-if="getNodeTooltipMsg(road.id)">
-          {{getNodeTooltipMsg(road.id)}}
+        <q-tooltip style="font-size: 12px; white-space: pre-line" v-if="getNodeTooltipMsg(road)">
+          {{getNodeTooltipMsg(road)}}
         </q-tooltip>
       </div>
     </div>
@@ -85,6 +85,7 @@ import { mapGetters, mapActions } from 'vuex';
 import { defineComponent } from 'vue';
 import { loadMapData } from '../model/load';
 import { knapsack } from '../model/knapsack';
+import { populateItems } from '../model/populate';
 import KnapsackModal from '../components/KnapsackModal';
 import canvasBackground from '../assets/images/white_orchard_clean_map.png';
 
@@ -103,6 +104,7 @@ export default defineComponent({
   },
   created() {
     this.saveMapData(this.fastTravel);
+    populateItems();
   },
   mounted() {
     const { canvas } = this.$refs;
@@ -338,12 +340,14 @@ export default defineComponent({
 
       return { canvas, context };
     },
-    getNodeTooltipMsg(nodeId) {
+    getNodeTooltipMsg(node) {
+      const isRoad = node.getProperties().road;
+
       if (this.disableFields) return '';
 
-      if (!this.startNode && !this.destNode) return 'Clique com o esquerdo para selecionar este nó como início\n\nClique com direito para gerenciar os itens';
+      if (!this.startNode && !this.destNode) return `Clique com o esquerdo para selecionar este nó como início${isRoad ? '' : '\n\nClique com direito para gerenciar os itens'}`;
 
-      if (this.startNode && !this.destNode && this.startNode !== nodeId) {
+      if (this.startNode && !this.destNode && this.startNode !== node.id) {
         return 'Clique para selecionar este nó como destino';
       }
 

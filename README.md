@@ -18,6 +18,8 @@ O projeto consiste em um mapa da região de *White Orchard*, do jogo *The Witche
 - Programação Dinâmica
   - Knapsack Problem
 
+Acesse o vídeo [aqui](https://github.com/projeto-de-algoritmos/Final_IgorPaivaThiagoLopes/blob/8a305f1a15b34e2d1cb05fc00fbb9dd822715aa4/apresentacao.mp4).
+
 ## Screenshots
 ### Página Inicial (Mapa)
 ![sc1](./src/assets/screenshots/Screenshot_1.png)

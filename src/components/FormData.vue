@@ -18,7 +18,7 @@
           v-model="knapsackCapacity"
           class="col-6"
           type="number"
-          label="Capacidade da mochila"
+          label="Capacidade da mochila (g)"
           :disable="disableFields"
         >
           <q-tooltip style="font-size: 12px">
@@ -46,7 +46,7 @@ export default defineComponent({
   data() {
     return {
       fastTravel: false,
-      knapsackCapacity: 170,
+      knapsackCapacity: 1000,
     };
   },
   watch: {

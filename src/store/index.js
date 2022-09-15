@@ -36,7 +36,7 @@ const Store = createStore({
   state: {
     fastTravel: false,
     disableFields: false,
-    knapsackCapacity: 50,
+    knapsackCapacity: 1000,
     nodes: getLocalStorageNodes(),
   },
   getters: {

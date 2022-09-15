@@ -3,37 +3,37 @@
     {
       "name": "Cintrian Faro",
       "value": 5,
-      "weight": 10,
+      "weight": 270,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/2/2b/Alcohol_Cintrian_Faro.png"
     },
     {
       "name": "Kaedwenian Stout\t",
       "value": 5,
-      "weight": 10,
+      "weight": 510,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/4/42/Alcohol_Kaedwenian_Stout.png"
     },
     {
       "name": " Redanian Lager",
       "value": 5,
-      "weight": 10,
+      "weight": 350,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/8/8a/Alcohol_Redanian_Lager.png"
     },
     {
       "name": "Rivian Kriek",
       "value": 5,
-      "weight": 10,
+      "weight": 420,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/9/96/Alcohol_Rivian_Kriek.png"
     },
     {
       "name": "Viziman Champion",
       "value": 5,
-      "weight": 10,
+      "weight": 100,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/8/8e/Alcohol_Viziman_Champion.png"
     },
     {
       "name": "Torch",
       "value": 5,
-      "weight": 11,
+      "weight": 177,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/6/68/Tw3_torch.png"
     },
     {
@@ -45,25 +45,25 @@
     {
       "name": "Axe",
       "value": 96,
-      "weight": 500,
+      "weight": 5000,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/2/22/Tw2_weapon_axe.png"
     },
     {
       "name": "Silver ruby ring",
       "value": 80,
-      "weight": 20,
+      "weight": 75,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/5/59/Rings_Silver_ruby.png"
     },
     {
       "name": "Silver amber ring",
       "value": 60,
-      "weight": 15,
+      "weight": 90,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/d/de/Rings_Silver_amber.png"
     },
     {
       "name": "Silver ring",
       "value": 40,
-      "weight": 20,
+      "weight": 55,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/d/d1/Rings_Silver.png"
     },
     {
@@ -75,61 +75,61 @@
     {
       "name": "Bread",
       "value": 1,
-      "weight": 1,
+      "weight": 100,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/b/b7/Food_Bread.png"
     },
     {
       "name": "Very Old Wine",
       "value": 400,
-      "weight": 85,
+      "weight": 800,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/6/6b/Alcohol_Toussaint_Red.png"
     },
     {
       "name": "The History of the World",
       "value": 8,
-      "weight": 55,
+      "weight": 550,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/3/33/Books_Generic_other.png"
     },
     {
       "name": "Temerian iron dagger",
       "value": 10,
-      "weight": 45,
+      "weight": 490,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/e/ec/Weapons_Temerian_iron_dagger.png"
     },
     {
       "name": "Temerian steel dagger",
       "value": 20,
-      "weight": 65,
+      "weight": 650,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/a/ab/Weapons_Temerian_steel_dagger.png"
     },
     {
       "name": "Basics of Alchemy",
       "value": 14,
-      "weight": 45,
+      "weight": 450,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/3/33/Books_Generic_other.png"
     },
     {
       "name": " Alcohest",
       "value": 10,
-      "weight": 18,
+      "weight": 60,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/d/d4/Alcohol_Alcohest.png"
     },
     {
       "name": "Flint",
       "value": 1,
-      "weight": 5,
+      "weight": 50,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/5/54/Items_Flint.png"
     },
     {
       "name": "Dwarven axe from Carbon",
       "value": 20,
-      "weight": 135,
+      "weight": 1350,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/0/04/Weapons_Dwarven_axe.png"
     },
     {
       "name": "Temerian steel axe",
       "value": 60,
-      "weight": 160,
+      "weight": 1600,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/e/e2/Weapons_Temerian_steel_axe.png"
     },
     {
@@ -141,7 +141,7 @@
     {
       "name": "Mahakaman rune dagger",
       "value": 55,
-      "weight": 60,
+      "weight": 600,
       "imageUrl": "https://static.wikia.nocookie.net/witcher/images/b/b5/Weapons_Mahakaman_rune_dagger.png"
     }
   ],
